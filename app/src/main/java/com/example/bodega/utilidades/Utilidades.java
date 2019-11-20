@@ -8,7 +8,7 @@ public class Utilidades {
     public static final String campo_precio="precio";
     public static final String campo_cantidad="cantidad";
 
-    public static final String crearTabla="create table "+tabla_productos+" (id int, nomProd text, precio int, cantidad int)";
+    public static final String crearTablaProd="create table "+tabla_productos+" ("+campo_id+" int, "+campo_nom_prod+" text, "+campo_precio+" int, "+campo_cantidad+" int)";
 
 
 }

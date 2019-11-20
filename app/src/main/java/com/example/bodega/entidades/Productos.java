@@ -14,6 +14,10 @@ public class Productos {
         this.cantidad = cantidad;
     }
 
+    public Productos(){
+
+    }
+
     public int getId() {
         return id;
     }
