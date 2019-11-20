@@ -65,6 +65,7 @@ public class MostrarProductos extends AppCompatActivity {
 
         db.update(Utilidades.tabla_productos,values,Utilidades.campo_id+"=?",parametros);
         Toast.makeText(getApplicationContext(),"Actualizacion realizada con exito",Toast.LENGTH_SHORT).show();
+        limpiar();
         db.close();
 
     }
