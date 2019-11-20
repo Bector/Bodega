@@ -2,6 +2,7 @@ package com.example.bodega;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -33,10 +34,39 @@ public class MostrarProductos extends AppCompatActivity {
                 consultar();
                 break;
             case R.id.btnActualizar:
+                ActualizarProducto();
                 break;
             case R.id.btnEliminar:
+                EliminarProducto();
                 break;
         }
+    }
+
+    private void EliminarProducto() {
+        SQLiteDatabase db= conn.getWritableDatabase();
+        String[] parametros={campoId.getText().toString()};
+
+        db.delete(Utilidades.tabla_productos,Utilidades.campo_id+"=?",parametros);
+        Toast.makeText(getApplicationContext(),"Eliminado con exito",Toast.LENGTH_SHORT).show();
+        limpiar();
+        db.close();
+
+    }
+
+    private void ActualizarProducto() {
+
+        SQLiteDatabase db= conn.getWritableDatabase();
+        String[] parametros={campoId.getText().toString()};
+        ContentValues values= new ContentValues();
+
+        values.put(Utilidades.campo_nom_prod,campoNomProd.getText().toString());
+        values.put(Utilidades.campo_cantidad,campoCantidad.getText().toString());
+        values.put(Utilidades.campo_precio,campoPrecio.getText().toString());
+
+        db.update(Utilidades.tabla_productos,values,Utilidades.campo_id+"=?",parametros);
+        Toast.makeText(getApplicationContext(),"Actualizacion realizada con exito",Toast.LENGTH_SHORT).show();
+        db.close();
+
     }
 
     private void consultar() {

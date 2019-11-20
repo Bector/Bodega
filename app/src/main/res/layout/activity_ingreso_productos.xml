@@ -51,5 +51,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick"
-        android:text="Registrar producto" />
+        android:text="Registrar producto"
+        android:background="@drawable/button_roun"/>
 </LinearLayout>
