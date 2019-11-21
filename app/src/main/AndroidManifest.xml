@@ -11,14 +11,15 @@
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".ListarProductos"></activity>
         <activity android:name=".MostrarProductos" />
-        <activity android:name=".Login" />
-        <activity android:name=".IngresoProductos" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Login" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".IngresoProductos" />
+        <activity android:name=".MainActivity">
         </activity>
     </application>
 
