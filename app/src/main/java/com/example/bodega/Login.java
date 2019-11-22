@@ -38,7 +38,8 @@ public class Login extends AppCompatActivity {
                 iniciarSesion();
                 break;
             case R.id.btnRegistroUsuario:
-                registrar();
+                Intent intent1=new Intent(Login.this,RegistroUsuario.class);
+                startActivity(intent1);
                 break;
         }
     }
@@ -60,8 +61,8 @@ public class Login extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Usuario y/o contraseña incorrecto(s)",Toast.LENGTH_SHORT).show();
             }
             cursor.close();
-        }catch (Exception e){
-            Toast.makeText(getApplicationContext(),"El usuario no existe",Toast.LENGTH_SHORT).show();
+        }catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "El usuario no existe", Toast.LENGTH_SHORT).show();
 
         }
     }
