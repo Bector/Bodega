@@ -9,7 +9,7 @@ public class Utilidades {
     public static final String campo_usuario="nomUsuario";
     public static final String campo_password="password";
 
-    public static final String crearTablaUsuario="create table "+tabla_usuario+" ("+campoNombre+" text, "+campoApellido+" text," +campoRut+" text,"+campo_usuario+" text,"+campo_password+")";
+    public static final String crearTablaUsuario="create table "+tabla_usuario+" ("+campoNombre+" text, "+campoApellido+" text," +campoRut+" text,"+campo_usuario+" text,"+campo_password+" text)";
 
 
     public static final String tabla_productos="productos";
