@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MostrarProductos"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MostrarProductos">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="CONSULTA Y MODIFICACION DE PRODUCTO"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/etId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="ID"
         android:inputType="textPersonName" />
@@ -20,14 +28,16 @@
         android:id="@+id/btnBuscar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/btn"
         android:onClick="onClick"
-        android:background="@drawable/button_roun"
         android:text="Buscar" />
 
     <EditText
         android:id="@+id/etNomProd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:ems="10"
         android:hint="Nombre del producto"
         android:inputType="textPersonName" />
@@ -36,6 +46,7 @@
         android:id="@+id/etPrecio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:ems="10"
         android:hint="Precio"
         android:inputType="textPersonName" />
@@ -44,6 +55,7 @@
         android:id="@+id/etCantidad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:ems="10"
         android:hint="Cantidad"
         android:inputType="textPersonName" />
@@ -52,15 +64,17 @@
         android:id="@+id/btnActualizar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@color/btn"
         android:onClick="onClick"
-        android:background="@drawable/button_roun"
         android:text="Actualizar" />
 
     <Button
         android:id="@+id/btnEliminar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@color/btn"
         android:onClick="onClick"
-        android:background="@drawable/button_roun"
         android:text="Eliminar" />
 </LinearLayout>
