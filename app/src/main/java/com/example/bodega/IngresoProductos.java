@@ -28,7 +28,7 @@ public class IngresoProductos extends AppCompatActivity {
 
     }
 
-    public void onClick(View view){
+   public void onClick(View view){
         //registrarProd();
         registrarPordSql();
     }
