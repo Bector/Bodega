@@ -21,8 +21,8 @@
                 android:id="@+id/imageView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="125dp"
-                app:srcCompat="@mipmap/ic_launcher" />
+                android:layout_marginTop="80dp"
+                app:srcCompat="@drawable/logo" />
 
             <EditText
                 android:id="@+id/etUsuario"
@@ -51,7 +51,7 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginRight="40dp"
-                android:background="@drawable/button_roun"
+                android:background="@color/btn"
                 android:onClick="onClick"
                 android:text="Iniciar Sesion" />
 
@@ -62,7 +62,7 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="40dp"
-                android:background="@drawable/button_roun"
+                android:background="@color/btn"
                 android:onClick="onClick"
                 android:text="Registrarse" />
 

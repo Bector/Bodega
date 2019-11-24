@@ -8,6 +8,14 @@
     android:orientation="vertical"
     tools:context=".RegistroUsuario">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="REGISTRO DE USUARIO"
+        android:textSize="20sp" />
+
     <EditText
         android:id="@+id/txtNombre"
         android:layout_width="match_parent"
@@ -47,8 +55,14 @@
         android:id="@+id/btnRegistrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registrar"
-        android:background="@drawable/button_roun"
+        android:background="@color/btn"
         android:onClick="registrarUsuario"
-        ></Button>
+        android:text="Registrar"></Button>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:srcCompat="@drawable/logo" />
 </LinearLayout>
