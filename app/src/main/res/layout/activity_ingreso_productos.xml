@@ -52,6 +52,36 @@
         android:hint="Cantidad"
         android:inputType="textPersonName" />
 
+    <RadioGroup
+        android:id="@+id/rbCategoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rbBebestible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bebestible" />
+
+        <RadioButton
+            android:id="@+id/rbSnack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Snack" />
+
+        <RadioButton
+            android:id="@+id/rbPasteles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pasteles" />
+
+        <RadioButton
+            android:id="@+id/rbAlcohol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alcohol" />
+    </RadioGroup>
+
     <Button
         android:id="@+id/btnRegistrar"
         android:layout_width="match_parent"
@@ -67,4 +97,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:srcCompat="@drawable/logo" />
+
+
 </LinearLayout>

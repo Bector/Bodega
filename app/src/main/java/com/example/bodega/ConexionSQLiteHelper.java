@@ -20,6 +20,11 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(Utilidades.crearTablaUsuario);
+        db.execSQL(Utilidades.crearTablaCat);
+        db.execSQL(Utilidades.insertarDatos1);
+        db.execSQL(Utilidades.insertarDatos2);
+        db.execSQL(Utilidades.insertarDatos3);
+        db.execSQL(Utilidades.insertarDatos4);
         db.execSQL(Utilidades.crearTablaProd);
 
     }
@@ -27,6 +32,7 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("drop table if exists usuario");
+        db.execSQL("drop table if exists categoria");
         db.execSQL("drop table if exists productos");
 
     }

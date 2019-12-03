@@ -36,9 +36,8 @@ public class RegistroUsuario extends AppCompatActivity {
 
         SQLiteDatabase database=conn.getWritableDatabase();
 
-        String insert1="INSERT INTO "+Utilidades.tabla_usuario+" ("+Utilidades.campoNombre+","+Utilidades.campoApellido+","+Utilidades.campoRut+"," +
-                ""+Utilidades.campo_usuario+","+Utilidades.campo_password+")VALUES('"+campoNombre+"','"+campoApellido+"','"+campoRut+"','"+campoUsuario+"','"+
-                campoPassword+"')";
+        String insert1="insert into "+Utilidades.tabla_usuario+" ("+Utilidades.campo_usuario+","+Utilidades.campo_password+") values('"+campoUsuario.getText().toString()+"','"+campoPassword.getText().toString()+"')";
+
 
         database.execSQL(insert1);
 

@@ -6,12 +6,14 @@ public class Productos {
     private String nomProd;
     private int precio;
     private int cantidad;
+    private String categoria;
 
-    public Productos(int id, String nomProd, int precio, int cantidad) {
+    public Productos(int id, String nomProd, int precio, int cantidad, String categoria) {
         this.id = id;
         this.nomProd = nomProd;
         this.precio = precio;
         this.cantidad = cantidad;
+        this.categoria=categoria;
     }
 
     public Productos(){
@@ -48,5 +50,13 @@ public class Productos {
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 }

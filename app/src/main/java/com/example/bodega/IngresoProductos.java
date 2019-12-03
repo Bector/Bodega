@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.bodega.utilidades.Utilidades;
@@ -15,6 +17,8 @@ import com.example.bodega.utilidades.Utilidades;
 public class IngresoProductos extends AppCompatActivity {
 
     EditText campoId,campoNomProd,campoPrecio,campoCant;
+    RadioButton rbBebestible,rbSnack,rbPasteles,rbAlcohol;
+    RadioGroup rbCategoria;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,13 @@ public class IngresoProductos extends AppCompatActivity {
         campoPrecio=(EditText)findViewById(R.id.etPrecio);
         campoCant=(EditText)findViewById(R.id.etCantidad);
 
+        rbBebestible=(RadioButton)findViewById(R.id.rbBebestible);
+        rbSnack=(RadioButton)findViewById(R.id.rbSnack);
+        rbPasteles=(RadioButton)findViewById(R.id.rbPasteles);
+        rbAlcohol=(RadioButton)findViewById(R.id.rbAlcohol);
+
+        rbCategoria=(RadioGroup)findViewById(R.id.rbCategoria);
+
     }
 
    public void onClick(View view){
@@ -36,12 +47,39 @@ public class IngresoProductos extends AppCompatActivity {
     private void registrarPordSql() {
         ConexionSQLiteHelper conn=new ConexionSQLiteHelper(this, "bodega",null,1);
         SQLiteDatabase database=conn.getWritableDatabase();
+        if(rbBebestible.isChecked()==true){
 
-        String insert="insert into "+Utilidades.tabla_productos+" ("+Utilidades.campo_id+","+Utilidades.campo_nom_prod+","+Utilidades.campo_precio+","+Utilidades.campo_cantidad+") values("
-        +campoId.getText().toString()+",'"+campoNomProd.getText().toString()+"',"+campoPrecio.getText().toString()+","+campoCant.getText().toString()+")";
-        database.execSQL(insert);
-        Toast.makeText(getApplicationContext(),"Registro exitoso!",Toast.LENGTH_SHORT).show();
-        database.close();
+            String insert="insert into "+Utilidades.tabla_productos+" ("+Utilidades.campo_nom_prod+","+Utilidades.campo_precio+","+Utilidades.campo_cantidad+","+Utilidades.campo_id_cat+") values('"
+                    +campoNomProd.getText().toString()+"',"+campoPrecio.getText().toString()+","+campoCant.getText().toString()+",1)";
+            database.execSQL(insert);
+            Toast.makeText(getApplicationContext(),"Registro exitoso!",Toast.LENGTH_SHORT).show();
+            database.close();
+
+        }else if(rbSnack.isChecked()==true){
+
+            String insert="insert into "+Utilidades.tabla_productos+" ("+Utilidades.campo_nom_prod+","+Utilidades.campo_precio+","+Utilidades.campo_cantidad+","+Utilidades.campo_id_cat+") values('"
+                    +campoNomProd.getText().toString()+"',"+campoPrecio.getText().toString()+","+campoCant.getText().toString()+",2)";
+            database.execSQL(insert);
+            Toast.makeText(getApplicationContext(),"Registro exitoso!",Toast.LENGTH_SHORT).show();
+            database.close();
+
+        }else if(rbPasteles.isChecked()==true){
+
+            String insert="insert into "+Utilidades.tabla_productos+" ("+Utilidades.campo_nom_prod+","+Utilidades.campo_precio+","+Utilidades.campo_cantidad+","+Utilidades.campo_id_cat+") values('"
+                    +campoNomProd.getText().toString()+"',"+campoPrecio.getText().toString()+","+campoCant.getText().toString()+",3)";
+            database.execSQL(insert);
+            Toast.makeText(getApplicationContext(),"Registro exitoso!",Toast.LENGTH_SHORT).show();
+            database.close();
+
+        }else if(rbAlcohol.isChecked()==true){
+
+            String insert="insert into "+Utilidades.tabla_productos+" ("+Utilidades.campo_nom_prod+","+Utilidades.campo_precio+","+Utilidades.campo_cantidad+","+Utilidades.campo_id_cat+") values('"
+                    +campoNomProd.getText().toString()+"',"+campoPrecio.getText().toString()+","+campoCant.getText().toString()+",4)";
+            database.execSQL(insert);
+            Toast.makeText(getApplicationContext(),"Registro exitoso!",Toast.LENGTH_SHORT).show();
+            database.close();
+
+        }
     }
 
     private void registrarProd() {

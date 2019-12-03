@@ -41,6 +41,10 @@ public class Login extends AppCompatActivity {
                 Intent intent1=new Intent(Login.this,RegistroUsuario.class);
                 startActivity(intent1);
                 break;
+            case R.id.btnQuienesSomos:
+                Intent intent2=new Intent(Login.this,QuienesSomos.class);
+                startActivity(intent2);
+                break;
         }
     }
 

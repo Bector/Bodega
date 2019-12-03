@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.example.bodega.utilidades.Utilidades;
 
 public class MostrarProductos extends AppCompatActivity {
-    EditText campoId,campoNomProd,campoPrecio,campoCantidad;
+    EditText campoId,campoNomProd,campoPrecio,campoCantidad,campoCategoria;
     ConexionSQLiteHelper conn;
 
     @Override
@@ -27,6 +27,7 @@ public class MostrarProductos extends AppCompatActivity {
         campoNomProd=(EditText)findViewById(R.id.etNomProd);
         campoPrecio=(EditText)findViewById(R.id.etPrecio);
         campoCantidad=(EditText)findViewById(R.id.etCantidad);
+        campoCategoria=(EditText)findViewById(R.id.etCategoria);
     }
     public void onClick(View view){
         switch (view.getId()){
@@ -73,7 +74,7 @@ public class MostrarProductos extends AppCompatActivity {
     private void consultar() {
         SQLiteDatabase database=conn.getReadableDatabase();
         String[] parametros={campoId.getText().toString()};
-        String[] campos={Utilidades.campo_nom_prod,Utilidades.campo_precio,Utilidades.campo_cantidad};
+        String[] campos={Utilidades.campo_nom_prod,Utilidades.campo_precio,Utilidades.campo_cantidad,Utilidades.campo_id_cat};
 
         try{
             Cursor cursor=database.query(Utilidades.tabla_productos,campos,Utilidades.campo_id+"=?",parametros,null,null,null);
@@ -81,6 +82,7 @@ public class MostrarProductos extends AppCompatActivity {
             campoNomProd.setText(cursor.getString(0));
             campoPrecio.setText(cursor.getString(1));
             campoCantidad.setText(cursor.getString(2));
+            campoCategoria.setText(cursor.getString(3));
             cursor.close();
         }catch (Exception e){
             Toast.makeText(getApplicationContext(),"El producto no existe",Toast.LENGTH_SHORT).show();
@@ -94,5 +96,6 @@ public class MostrarProductos extends AppCompatActivity {
         campoNomProd.setText("");
         campoPrecio.setText("");
         campoCantidad.setText("");
+        campoCategoria.setText("");
     }
 }

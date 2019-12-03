@@ -39,7 +39,7 @@ public class ListarProductos extends AppCompatActivity {
         Productos productos=null;
         listaProductos=new ArrayList<Productos>();
 
-        Cursor cursor=database.rawQuery("select * from "+ Utilidades.tabla_productos,null);
+        Cursor cursor=database.rawQuery("select id,nomProd,precio,cantidad,nomCat from "+ Utilidades.tabla_productos+" join "+Utilidades.tabla_categoria+" on "+Utilidades.tabla_productos+"."+Utilidades.campo_id_cat+"="+Utilidades.tabla_categoria+"."+Utilidades.campo_id_cat,null);
 
         while (cursor.moveToNext()){
             productos=new Productos();
@@ -47,6 +47,7 @@ public class ListarProductos extends AppCompatActivity {
             productos.setNomProd(cursor.getString(1));
             productos.setPrecio(cursor.getInt(2));
             productos.setCantidad(cursor.getInt(3));
+            productos.setCategoria(cursor.getString(4));
 
             listaProductos.add(productos);
         }
@@ -57,7 +58,7 @@ public class ListarProductos extends AppCompatActivity {
         listaInformacion=new ArrayList<String>();
 
         for (int i=0;i<listaProductos.size();i++){
-            listaInformacion.add(listaProductos.get(i).getId()+" - "+listaProductos.get(i).getNomProd()+" - "+listaProductos.get(i).getPrecio()+" - "+listaProductos.get(i).getCantidad());
+            listaInformacion.add(listaProductos.get(i).getId()+" - "+listaProductos.get(i).getNomProd()+" - "+listaProductos.get(i).getPrecio()+" - "+listaProductos.get(i).getCantidad()+" - "+listaProductos.get(i).getCategoria());
         }
     }
 }
